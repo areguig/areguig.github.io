@@ -80,11 +80,11 @@ $(function(){
                   url : res
               },
               success:function successShorten (response) {
-                alert(response)
+                res=response;
                 $body.removeClass("loading");
               },
               error:function errorShorten(response) {
-                alert("An error occured. ")
+                alert("An error occured with the shortener service. ")
                 $body.removeClass("loading");
               }
 
