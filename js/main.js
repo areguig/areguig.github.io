@@ -55,28 +55,43 @@ $(function(){
      ajaxStart: function() { $body.addClass("loading");    }
    });
 
-      $("#submit_cud").on('click', function(e){
-        $('#copy-button').tooltip();
-        new Clipboard('#copy-button');
-        var res ='';
-        var url = $("#inputUrl").val();
-        var src = $("#inputSrc").val();
-        var medium =$("#inputMedium").val();
-        var campaignName=$("#inputCampaignName").val();
-        if(url && src){
-          res=url+"?utm_source="+src;
-          if(medium){
-            res+="&utm_medium="+medium;
-          }
-          if(campaignName){
-            res+="&utm_campaign="+campaignName;
-          }
+    $("#submit_cud").on('click', function(e){
+      $('#copy-button').tooltip();
+      new Clipboard('#copy-button');
+      var res ='';
+      var url = $("#inputUrl").val();
+      var src = $("#inputSrc").val();
+      var medium =$("#inputMedium").val();
+      var campaignName=$("#inputCampaignName").val();
+      if(url && src){
+        res=url+"?utm_source="+src;
+        if(medium){
+          res+="&utm_medium="+medium;
+        }
+        if(campaignName){
+          res+="&utm_campaign="+campaignName;
+        }
+        // encode the url
+        res=encodeURI(res);
 
+          if($('#inputShortenUrl').is(':checked')){
+            $.ajax({
+                url: 'https://akli-reguig.appspot.com/shorten',
+                type : 'POST', // Le type de la requête HTTP, ici devenu POST
+                data : 'url='+res
+                success: function (response) {
+                  alert(response)
+                },
+                error: function (response) {
+                    alert("An error occured. Search someting else. ")
+                },
+            });
+          }
           $("#cubResult").val(encodeURI(res));
           $("#divCubResult").show();
-        } else {
+      } else {
           $("#alertMsgCub").show();
-        }
+      }
       });
 
     $('#copy-button').on('click', function(e) {
