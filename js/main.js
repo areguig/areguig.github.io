@@ -25,7 +25,7 @@ $(function(){
         }
         console.log("query string "+ q)
        $.ajax({
-           url: '/twitter/search?h='+(q.match('^#')?"true":"false")+'&q='+q.substring(1),
+           url: 'https://akli-reguig.appspot.com/twitter/search?h='+(q.match('^#')?"true":"false")+'&q='+q.substring(1),
            success: function (response) {
                console.log('https://twitter.com/'+response.user.screen_name+'/status/'+response.id_str);
                var tweet = document.getElementById("tweet");
