@@ -73,21 +73,23 @@ $(function(){
         }
         // encode the url
         res=encodeURI(res);
-
           if($('#inputShortenUrl').is(':checked')){
-            $.ajax({
-                url: 'https://akli-reguig.appspot.com/shorten',
-                type : 'POST', // Le type de la requête HTTP, ici devenu POST
-                data : 'url='+res
-                success: function (response) {
-                  alert(response)
-                },
-                error: function (response) {
-                    alert("An error occured. Search someting else. ")
-                },
-            });
+            $.post(
+              'https://akli-reguig.appspot.com/shorten',
+              {
+                  url : res
+              },
+               function (response) {
+                alert(response)
+                $body.removeClass("loading");
+              },
+               function (response) {
+                alert("An error occured. ")
+                $body.removeClass("loading");
+              }
+            );
           }
-          $("#cubResult").val(encodeURI(res));
+          $("#cubResult").val(res);
           $("#divCubResult").show();
       } else {
           $("#alertMsgCub").show();
