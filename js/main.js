@@ -74,7 +74,6 @@ $(function(){
         // encode the url
         res=encodeURI(res);
         $("#cubResultLong").html(res);
-        $("#divCubResultLong").show();
           if($('#inputShortenUrl').is(':checked')){
           $.ajax({
               url:'https://akli-reguig.appspot.com/shorten',
@@ -86,6 +85,7 @@ $(function(){
                 $body.removeClass("loading");
                 $("#cubResult").val(res);
                 $("#divCubResult").show();
+                $("#divCubResultLong").show();
               },
               error:function errorShorten(response) {
                 alert("An error occured with the shortener service. ")
