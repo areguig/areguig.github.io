@@ -79,14 +79,8 @@ $(function(){
               {
                   url : res
               },
-               function (response) {
-                alert(response)
-                $body.removeClass("loading");
-              },
-               function (response) {
-                alert("An error occured. ")
-                $body.removeClass("loading");
-              }
+              'successShorten',
+              'errorShorten'
             );
           }
           $("#cubResult").val(res);
@@ -98,7 +92,7 @@ $(function(){
 
     $('#copy-button').on('click', function(e) {
       $('#copy-button').trigger('copied', ['Copied!']);
-  });
+    });
     // Handler for updating the tooltip message.
    $('#copy-button').bind('copied', function(event, message) {
      $(this).attr('title', message)
@@ -108,3 +102,12 @@ $(function(){
          .tooltip('fixTitle');
    });
 });
+function successShorten (response) {
+  alert(response)
+  $body.removeClass("loading");
+}
+
+function errorShorten(response) {
+  alert("An error occured. ")
+  $body.removeClass("loading");
+}
