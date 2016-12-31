@@ -75,24 +75,24 @@ $(function(){
         res=encodeURI(res);
         $("#cubResultLong").html(res);
           if($('#inputShortenUrl').is(':checked')){
-          $.ajax({
-              url:'https://akli-reguig.appspot.com/shorten',
-              data:{
-                  url : res
-              },
-              success:function successShorten (response) {
-                res=response;
-                $body.removeClass("loading");
-                $("#cubResult").val(res);
-                $("#divCubResult").show();
-                $("#divCubResultLong").show();
-              },
-              error:function errorShorten(response) {
-                alert("An error occured with the shortener service. ")
-                $body.removeClass("loading");
-              }
+            $.ajax({
+                url:'https://akli-reguig.appspot.com/shorten',
+                data:{
+                    url : res
+                },
+                success:function successShorten (response) {
+                  res=response;
+                  $body.removeClass("loading");
+                  $("#cubResult").val(res);
+                  $("#divCubResult").show();
+                  $("#divCubResultLong").show();
+                },
+                error:function errorShorten(response) {
+                  alert("An error occured with the shortener service. ")
+                  $body.removeClass("loading");
+                }
 
-            });
+              });
           }
           $("#cubResult").val(res);
           $("#divCubResult").show();
