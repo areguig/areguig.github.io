@@ -82,6 +82,8 @@ $(function(){
               success:function successShorten (response) {
                 res=response;
                 $body.removeClass("loading");
+                $("#cubResult").val(res);
+                $("#divCubResult").show();
               },
               error:function errorShorten(response) {
                 alert("An error occured with the shortener service. ")
