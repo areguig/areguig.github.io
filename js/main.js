@@ -73,6 +73,8 @@ $(function(){
         }
         // encode the url
         res=encodeURI(res);
+        $("#cubResultLong").html(res);
+        $("#divCubResultLong").show();
           if($('#inputShortenUrl').is(':checked')){
           $.ajax({
               url:'https://akli-reguig.appspot.com/shorten',
