@@ -56,6 +56,7 @@ $(function(){
    });
 
     $("#submit_cud").on('click', function(e){
+      e.preventDefault();
       $('#copy-button').tooltip();
       new Clipboard('#copy-button');
       var res ='';
