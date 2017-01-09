@@ -141,7 +141,13 @@ $(function(){
     }
   });
 
-  cheet('left up right down', function () {
+  var mc = new Hammer.Manager(document.getElementById('main_container'));
+mc.add( new Hammer.Tap() );
+mc.add( new Hammer.Tap({ event: 'quadrupletap', taps: 4 }) );
+mc.get('quadrupletap').recognizeWith('tap');
+
+
+  mc.on("quadrupletap", function(ev) {
     var audio_samba = document.getElementById('play_samba');
     if(playing){
       audio_samba.pause();
@@ -151,5 +157,5 @@ $(function(){
      audio_samba.play();
      playing = true;
    }
- });
+  });
 });
