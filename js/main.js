@@ -1,3 +1,4 @@
+var playing = false;
 $(function(){
   var newHash      = "";
   $("nav").delegate("a", "click", function() {
@@ -115,4 +116,28 @@ $(function(){
          .attr('title', "Copy to Clipboard")
          .tooltip('fixTitle');
    });
+
+   $('#play_samba_btn').on('click', function(e) {
+     e.preventDefault();
+     var audio_samba = document.getElementById('play_samba');
+     if(playing){
+       audio_samba.pause();
+       audio_samba.currentTime = 0;
+      playing=false;
+    } else {
+      audio_samba.play();
+      playing = true;
+    }
+   });
+   cheet('s a m b a', function () {
+     var audio_samba = document.getElementById('play_samba');
+     if(playing){
+       audio_samba.pause();
+       audio_samba.currentTime = 0;
+      playing=false;
+    } else {
+      audio_samba.play();
+      playing = true;
+    }
+  });
 });
