@@ -140,4 +140,16 @@ $(function(){
       playing = true;
     }
   });
+
+  cheet('left up right down', function () {
+    var audio_samba = document.getElementById('play_samba');
+    if(playing){
+      audio_samba.pause();
+      audio_samba.currentTime = 0;
+     playing=false;
+   } else {
+     audio_samba.play();
+     playing = true;
+   }
+ });
 });
