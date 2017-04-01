@@ -78,6 +78,15 @@ And start writing some expressive specifications under src/test/groovy/ :
     }
 ```
 
+Spock generates a test report under `/build/reports/tests/test/` as expressive as the tests we wrote: 
+
+Successful tests overview : 
+
+Successful specification  : 
+
+Failing tests : 
+
+Failing test details :
 
 
 ### Sample
