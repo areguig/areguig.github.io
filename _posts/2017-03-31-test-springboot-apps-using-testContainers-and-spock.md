@@ -82,12 +82,19 @@ Spock generates a test report under `/build/reports/tests/test/` as expressive a
 
 Successful tests overview : 
 
+![All_tests_ok_overview](https://raw.githubusercontent.com/areguig/areguig.github.io/master/images/posts/boot-testContainer-spock/All_tests_ok_overview.png)
+
 Successful specification  : 
+
+![All_test_ok_spec](https://raw.githubusercontent.com/areguig/areguig.github.io/master/images/posts/boot-testContainer-spock/All_test_ok_spec.png)
 
 Failing tests : 
 
+![Failing_tests_overview](https://raw.githubusercontent.com/areguig/areguig.github.io/master/images/posts/boot-testContainer-spock/Failing_tests_overview.png)
+
 Failing test details :
 
+![Failing_test_details](https://raw.githubusercontent.com/areguig/areguig.github.io/master/images/posts/boot-testContainer-spock/Failing_test_details.png)
 
 ### Sample
 
