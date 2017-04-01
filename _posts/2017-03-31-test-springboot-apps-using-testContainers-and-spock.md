@@ -9,7 +9,9 @@ An elegant way to implement tests for a [_Spring-Boot_](https://projects.spring.
 
 > [TestContainers](https://www.testcontainers.org/) is a Java library that supports JUnit tests, providing lightweight, throwaway instances of common databases, Selenium web browsers, or anything else that can run in a Docker container.
 
-Add the testContainers postgres dependency to gradle build 
+TestContainers requires __Docker or docker-machine (for OS X)__ and __Java 8__ installed on the machine that will run the tests 
+
+Add the testContainers postgres dependency to gradle build :
 
 ```
 compile 'org.testcontainers:postgresql:<VERSION>'
@@ -54,7 +56,7 @@ org.testcontainers.DockerClientFactory   : Disk utilization in Docker environmen
 
 > [Spock](http://spockframework.org/) is a testing and specification framework for Java and Groovy applications. What makes it stand out from the crowd is its beautiful and highly expressive specification language. 
 
-Add needed stuff to gradle build : 
+Add needed stuff to gradle build file : 
 
 ```
 apply plugin: 'groovy'
