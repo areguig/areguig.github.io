@@ -3,7 +3,7 @@ layout: post
 title: Testing Spring-Boot apps using TestContainers and Spock
 published: true
 ---
-An elegant way to implement tests for a [_Spring-Boot_](https://projects.spring.io/spring-boot/) based applications is to use TestContainers to simply test database interactions and Spock framework to write truly expressive tests that can be used as the application's living documentation (always up to date otherwise the build fails).
+An elegant way to implement tests for a [Spring-Boot](https://projects.spring.io/spring-boot/) based applications is to use TestContainers to simply test database interactions and Spock framework to write truly expressive tests that can be used as the application's living documentation (always up to date otherwise the build fails).
 
 ### An integration test database in a Docker container with TestConatainers
 
@@ -17,7 +17,7 @@ Add the testContainers postgres dependency to gradle build :
 compile 'org.testcontainers:postgresql:<VERSION>'
 ``` 
 
-The JUnit `@Rule/@ClassRule` feature is not needed for this example,we will use the [_modified JDBC URL_](https://www.testcontainers.org/usage/database_containers.html#jdbc-url) solution which is more elegant because it doesn't need specific code : 
+The JUnit `@Rule/@ClassRule` feature is not needed for this example,we will use the [modified JDBC URL](https://www.testcontainers.org/usage/database_containers.html#jdbc-url) solution which is more elegant because it doesn't need specific code : 
 
 > As long as you have TestContainers and the appropriate JDBC driver on your classpath, you can simply modify regular JDBC connection URLs to get a fresh containerized instance of the database each time your application starts up.
 
@@ -123,7 +123,9 @@ Failing test details :
 
 ![Failing_test_details](https://raw.githubusercontent.com/areguig/areguig.github.io/master/images/posts/boot-testContainer-spock/Failing_test_details.png)
 
-### Sample
+### Wrap up
+
+I really like the combo Spring-Boot,TestContainers and Spock. It is a fully working stack for any microservice (or is it micro-service) you need to write. 
 
 A sample app using [TestContainers](https://www.testcontainers.org/) and [Spock](http://spockframework.org/) for integration tests : 
 
@@ -132,5 +134,8 @@ A sample app using [TestContainers](https://www.testcontainers.org/) and [Spock]
 - Uses [JOOQ](https://www.jooq.org/) as DSL to construct SQL queries.
 
 [Check it out](https://github.com/areguig/boot-testContainers-spock-sample-app).
-Feel free to open issues or submit PRs if you thing it is needed. 
+
+Feel free to open issues or submit PRs if you thing it is needed and to correct me if i am wrong.
+
+
 
