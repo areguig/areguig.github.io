@@ -69,20 +69,20 @@ dependencies {
 And start writing some expressive specifications under src/test/groovy/ : 
 
 ``` groovy
-    void "should return the created object after creation (POST)"(){
+       void "should return the created object after creation (POST)"(){
         given: " The character Ragnar Lothbrok from the Show Vikings"
             def ragnar= new Character()
             ragnar.setFirstName("Ragnar")
             ragnar.setLastName("Lothbrok")
             ragnar.setShow("Vikings")
         when: "The character is POSTED to /character endpoint"
-        ResponseEntity entity = restTemplate.postForEntity('/character',ragnar,Character.class)
+            ResponseEntity entity = restTemplate.postForEntity('/character',ragnar,Character.class)
         then: "The returned status is 201 CREATED and the content is the created object with its id in the system."
-        entity.statusCode == HttpStatus.CREATED
-        entity.body.getFirstName() == ragnar.getFirstName()
-        entity.body.getLastName() == ragnar.getLastName()
-        entity.body.getShow()== ragnar.getShow()
-        entity.body.getId()!=null
+            entity.statusCode == HttpStatus.CREATED
+            entity.body.getFirstName() == ragnar.getFirstName()
+            entity.body.getLastName() == ragnar.getLastName()
+            entity.body.getShow()== ragnar.getShow()
+            entity.body.getId()!=null
     }
 ```
 
