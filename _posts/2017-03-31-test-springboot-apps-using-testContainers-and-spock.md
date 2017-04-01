@@ -125,7 +125,7 @@ Failing test details :
 
 ### Wrap up
 
-I really like the combo Spring-Boot,TestContainers and Spock. It is a fully working stack for any microservice (or is it micro-service) you need to write. 
+I really like the combo Spring-Boot,TestContainers and Spock. It is a fully working stack for any microservice (or is it micro-service?😜) you need to write. 
 
 A sample app using [TestContainers](https://www.testcontainers.org/) and [Spock](http://spockframework.org/) for integration tests : 
 
