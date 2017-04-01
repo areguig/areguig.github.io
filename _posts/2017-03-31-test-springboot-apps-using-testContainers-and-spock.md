@@ -135,7 +135,7 @@ A sample app using [TestContainers](https://www.testcontainers.org/) and [Spock]
 
 [Check it out](https://github.com/areguig/boot-testContainers-spock-sample-app).
 
-Feel free to open issues or submit PRs if you thing it is needed and to correct me if i am wrong.
+Feel free to open issues or submit PRs if you think it is needed and correct me if i am wrong.
 
 
 
