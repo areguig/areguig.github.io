@@ -33,7 +33,7 @@ That's all you have to do to launch a postgresql database in a docker container 
 
 Running the tests will display the following lines during the application start : 
 
-```log 
+```
 org.testcontainers.DockerClientFactory   : Docker host IP address is localhost
 org.testcontainers.DockerClientFactory   : Connected to docker: 
   Server Version: 17.03.1-ce
@@ -66,10 +66,16 @@ dependencies {
 }
 ```
 
-And start writing some expressive specifications under src/test/groovy/<package>/ : 
+And start writing some expressive specifications under src/test/groovy/ : 
 
 ``` groovy
-
+    void "should return 404 when the endpoint doesn't exist"(){
+        given: "An endpoint that doesn't exist (/nopEndpoint/)"
+        when: "The endpoint is called using GET"
+        ResponseEntity entity = restTemplate.getForEntity('/nopEndpoint/', String.class)
+        then: "The returned status is 404 not found"
+        entity.statusCode == HttpStatus.NOT_FOUND
+    }
 ```
 
 
