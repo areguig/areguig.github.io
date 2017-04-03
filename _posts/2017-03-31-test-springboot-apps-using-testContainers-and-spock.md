@@ -105,7 +105,7 @@ And start writing some expressive specifications under src/test/groovy/ :
 
 ```
 
-Spock generates a test report under `/build/reports/tests/test/` as expressive as the tests we wrote: 
+The Gradle generated report under `/build/reports/tests/test/` as expressive as the tests we wrote: 
 
 Successful tests overview : 
 
