@@ -107,10 +107,6 @@ And start writing some expressive specifications under src/test/groovy/ :
 
 The Gradle generated report under `/build/reports/tests/test/` is as expressive as the tests we wrote:
 
-Successful tests overview :
-
-![All_tests_ok_overview](https://raw.githubusercontent.com/areguig/areguig.github.io/master/images/posts/boot-testContainer-spock/All_tests_ok_overview.png)
-
 Successful specification  :
 
 ![All_test_ok_spec](https://raw.githubusercontent.com/areguig/areguig.github.io/master/images/posts/boot-testContainer-spock/All_test_ok_spec.png)
