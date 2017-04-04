@@ -7,7 +7,7 @@ $(function(){
   });
 
   $(window).bind('hashchange', function(){
-      newHash = window.location.hash.substring(1)?window.location.hash.substring(1):"home";
+      newHash = window.location.hash.substring(1)?window.location.hash.substring(1):"ts";
       if (newHash) {
         $("div.container > div.main-content").hide();
         $("div#"+newHash).show()

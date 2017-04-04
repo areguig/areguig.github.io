@@ -1,6 +1,7 @@
 ---
 layout: post
-title: PostgreSQL tips 1.
+title: PostgreSQL tips
+tags: tag1 tag2 tag3
 published: true
 ---
 
