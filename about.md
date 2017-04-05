@@ -11,6 +11,5 @@ I am interested in every aspect of softwares from the product definition and UX 
 - Software quality.
 - Domain Driven Design.
 - Cloud native computing.
-- Developer advocacy
 
 <br/> <a href="/cv" target="_blank">Curriculum Vitae</a>
