@@ -14,5 +14,36 @@
  
 ## Bubble sort
 
+**Comparison-based** algorithm in which each pair of adjacent elements is compared and **the elements are swapped** if they are not in order.
 
+|Complexity| Stable? | In place ? | Adaptative? |
+| ---- | ---- | ---- | ----- |
+| O(n^2) | :white_check_mark: | :white_check_mark: | :x: |
 
+```java
+    public static int[] bubbleSort(int[] input) {
+        for (int j = 0; j < input.length - 1; j++) {
+            boolean swapped = false;
+            for (int i = 0; i < input.length - 1; i++) {
+                if (input[i + 1] < input[i]) {
+                    int before = input[i + 1];
+                    input[i + 1] = input[i];
+                    input[i] = before;
+                    swapped = true;
+                }
+            }
+            if (!swapped) {
+                break;
+            }
+        }
+        return input;
+    }
+```
+
+## Insertion sort
+
+**Comparison-based** algorithm that maintains a sorted sub list within the input array, and each element of the unsorted part has to find its place in the sorted sub list.
+
+|Complexity| Stable? | In place ? | Adaptative? |
+| ---- | ---- | ---- | ----- |
+| O(n^2) | :white_check_mark: | :white_check_mark: | :x: |
