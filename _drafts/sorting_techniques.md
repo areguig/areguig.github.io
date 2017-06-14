@@ -21,48 +21,70 @@
 | O(n^2) | :white_check_mark: | :white_check_mark: | :x: |
 
 ```java
-    public static int[] bubbleSort(int[] input) {
-        for (int j = 0; j < input.length - 1; j++) {
-            boolean swapped = false;
-            for (int i = 0; i < input.length - 1; i++) {
-                if (input[i + 1] < input[i]) {
-                    int before = input[i + 1];
-                    input[i + 1] = input[i];
-                    input[i] = before;
-                    swapped = true;
-                }
-            }
-            if (!swapped) {
-                break;
+public static int[] bubbleSort(int[] input) {
+    for (int j = 0; j < input.length - 1; j++) {
+        boolean swapped = false;
+        for (int i = 0; i < input.length - 1; i++) {
+            if (input[i + 1] < input[i]) {
+                int before = input[i + 1];
+                input[i + 1] = input[i];
+                input[i] = before;
+                swapped = true;
             }
         }
-        return input;
+        if (!swapped) {
+            break;
+        }
+    }
+    return input;
     }
 ```
 
 ## Insertion sort
 
-**Comparison-based** algorithm that maintains a sorted sub list within the input array, and each element of the unsorted part has to find its place in the sorted sub list.
+**Comparison-based** algorithm that maintains a **sorted sub list** within the input array, and each element of the unsorted part has to find its place in the sorted sub list.
 
 |Complexity| Stable? | In place ? | Adaptative? |
 | ---- | ---- | ---- | ----- |
 | O(n^2) | :white_check_mark: | :white_check_mark: | :x: |
 
 ```java
-    public static int[] insertionSort(int[] input){
-        for(int i =1;i<=input.length-1;i++){
-            int valueToInsert = input[i];
-            int holePosition=i;
-            while(holePosition>0 && input[holePosition-1]>valueToInsert)
-            {
-                input[holePosition]=input[holePosition-1];
-                holePosition=holePosition-1;
-            }
-            input[holePosition]=valueToInsert;
+public static int[] insertionSort(int[] input){
+    for(int i =1;i<=input.length-1;i++){
+        int valueToInsert = input[i];
+        int holePosition=i;
+        while(holePosition>0 && input[holePosition-1]>valueToInsert)
+        {
+            input[holePosition]=input[holePosition-1];
+            holePosition=holePosition-1;
         }
-        return input;
+        input[holePosition]=valueToInsert;
+    }
+    return input;
     }
 ```
 
+## Selection sort 
 
+**Comparison-based** algorithm that splits the input into two parts, the left sorted one and the right unsorted part. 
+The smallest element of the unsorted part is **selected** and swapped with the leftmost element, and that element becomes the last and greatest element of the sorted part.
+
+|Complexity| Stable? | In place ? | Adaptative? |
+| ---- | ---- | ---- | ----- |
+| O(n^2) | :white_check_mark: | :white_check_mark: | :x: |
+
+```java
+public static int[] selectionSort(int[] input){
+    for(int j = 0;j < input.length-1;j++){
+        for(int i=j+1;i< input.length;i++){
+            if(input[i]<input[j]) {
+                int selected=input[i];
+                input[i] = input[j];
+                input[j] =selected;
+            }
+        }
+    }
+    return input;
+    }
+```
 
