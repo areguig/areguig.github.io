@@ -37,7 +37,7 @@ public static int[] bubbleSort(int[] input) {
         }
     }
     return input;
-    }
+}
 ```
 
 ## Insertion sort
@@ -61,7 +61,7 @@ public static int[] insertionSort(int[] input){
         input[holePosition]=valueToInsert;
     }
     return input;
-    }
+ }
 ```
 
 ## Selection sort 
@@ -85,6 +85,49 @@ public static int[] selectionSort(int[] input){
         }
     }
     return input;
-    }
+}
 ```
 
+## Merge sort
+
+**Divide and conquer technique** based algorithm that divides the input into two equal parts and then merges them in a sorted way.
+
+|Complexity| Stable? | In place ? | Adaptative? |
+| ---- | ---- | ---- | ----- |
+| O(n log n) | :x: | :x: | :x: |
+
+``` java
+public static int[] mergeSort(int[] input) {
+if (input.length <= 1) {
+    return input;
+}
+// split the input into two arrays :
+int[] first = new int[input.length / 2];
+int[] second = new int[input.length - first.length];
+System.arraycopy(input, 0, first, 0, first.length);
+System.arraycopy(input, first.length, second, 0, second.length);
+mergeSort(first);
+mergeSort(second);
+merge(first, second, input);
+return input;
+}
+
+private static void merge(int[] first, int[] second, int[] input) {
+int iFirst = 0;
+int iSecond = 0;
+int iMerged = 0;
+while (iFirst < first.length && iSecond < second.length) {
+    if (first[iFirst] < second[iSecond]) {
+        input[iMerged] = first[iFirst];
+        iFirst++;
+    } else {
+        input[iMerged] = second[iSecond];
+        iSecond++;
+    }
+    iMerged++;
+}
+//copy remaining elements from both halves - each half will have already sorted elements
+System.arraycopy(first, iFirst, input, iMerged, first.length - iFirst);
+System.arraycopy(second, iSecond, input, iMerged, second.length - iSecond);
+}
+```
