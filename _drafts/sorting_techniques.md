@@ -47,3 +47,22 @@
 |Complexity| Stable? | In place ? | Adaptative? |
 | ---- | ---- | ---- | ----- |
 | O(n^2) | :white_check_mark: | :white_check_mark: | :x: |
+
+```java
+    public static int[] insertionSort(int[] input){
+        for(int i =1;i<=input.length-1;i++){
+            int valueToInsert = input[i];
+            int holePosition=i;
+            while(holePosition>0 && input[holePosition-1]>valueToInsert)
+            {
+                input[holePosition]=input[holePosition-1];
+                holePosition=holePosition-1;
+            }
+            input[holePosition]=valueToInsert;
+        }
+        return input;
+    }
+```
+
+
+
