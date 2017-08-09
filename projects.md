@@ -18,3 +18,8 @@ All sources can be found on my [github](https://github.com/areguig), and of cour
 ### <a href="https://github.com/areguig/sauron" target="_blank">Sauron</a>
 
 - A simple application providing a status page to your system that can be managed via its REST API.
+
+### <a href="/wisdom" target="_blank">Wisdom</a>
+
+- A web page that displays a wisdom quote every 20s. Pull requests are open and encouraged to increase the number of quotes, go <a href="https://github.com/areguig/wisdom/blob/master/_data/quotes.yml" target="_blank">here</a>
+
