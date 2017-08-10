@@ -16,6 +16,6 @@ I am interested in every aspect of softwares from the product definition and UX 
 - Developer Advocacy.
 - Blockchain technology.
 
-Thinking about hiring me for your next project/challenge, have a questions or feedback about what i do :<a href="mailto:akli.reguig@gmail.com">akli.reguig@gmail.com</a>
+Thinking about hiring me for your next project/challenge, have a questions or feedback about what i do : <a href="mailto:akli.reguig@gmail.com">akli.reguig@gmail.com</a>
 
 - More about me on my <a href="/cv" target="_blank">resume</a> page or my <a href="https://www.linkedin.com/in/areguig">LinkedIn</a>.
