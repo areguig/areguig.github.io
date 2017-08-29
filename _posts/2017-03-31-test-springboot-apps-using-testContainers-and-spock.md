@@ -5,7 +5,7 @@ published: true
 ---
 An elegant way to implement tests for a [Spring-Boot](https://projects.spring.io/spring-boot/) based applications is to use TestContainers to simply test database interactions and Spock framework to write truly expressive tests that can be used as the application's living documentation (always up to date otherwise the build fails).
 
-## An integration test database in a Docker container with TestConatainers
+## An integration test database in a Docker container with TestContainers
 
 > [TestContainers](https://www.testcontainers.org/) is a Java library that supports JUnit tests, providing lightweight, throwaway instances of common databases, Selenium web browsers, or anything else that can run in a Docker container.
 
