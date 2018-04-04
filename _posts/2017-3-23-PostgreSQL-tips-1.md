@@ -11,20 +11,32 @@ published: true
 
 #### Show running queries (postgres 9.2+)
 
-<script src="https://gist.github.com/areguig/b53bb7aae772ef085ff1f99f4faff802.js"></script>
-
+```sql
+SELECT now() - query_start as "runtime",client_addr, waiting, state, query
+  FROM  pg_stat_activity
+ ORDER BY runtime DESC;
+ ```
+ 
 #### Show last autovacuum and last autoanalyze by table
 
-<script src="https://gist.github.com/areguig/e05223704c9e1c14a84aaf7beb569f61.js"></script>
-
+```sql
+ select relname,last_vacuum, last_autovacuum, last_analyze, last_autoanalyze 
+ from pg_stat_user_tables;
+ ```
+ 
 #### Kill a query (use with caution)
 _running_
 
-<script src="https://gist.github.com/areguig/445441609df4ac866a02176aceec807e.js"></script>
-
+```SQL
+select relname,last_vacuum, last_autovacuum, last_analyze, last_autoanalyze 
+ from pg_stat_user_tables;
+ ```
+ 
 _idle_
 
-<script src="https://gist.github.com/areguig/9bcdfff8be856a32e194b17603cc9b42.js"></script>
+```sql
+SELECT pg_terminate_backend(procpid);
+```
 
 #### Tables indexes usage.
 
