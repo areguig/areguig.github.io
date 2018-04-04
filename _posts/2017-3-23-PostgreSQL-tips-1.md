@@ -27,7 +27,7 @@ SELECT now() - query_start as "runtime",client_addr, waiting, state, query
 #### Kill a query (use with caution)
 _running_
 
-```SQL
+```sql
 select relname,last_vacuum, last_autovacuum, last_analyze, last_autoanalyze 
  from pg_stat_user_tables;
  ```
