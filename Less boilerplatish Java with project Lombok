@@ -1,0 +1,95 @@
+---
+published: false
+---
+## Less boilerplatish Java with project Lombok.
+
+Everybody agree about the fact that _Java_ is verbose but yet a great language that is widly used over the world of development. 
+The version 8 introduced a lot of stuff that helps developers reduce de verbosity of their code.
+
+### Project Lombok
+
+When i start a Java project, the first dependency i take is [Lombok](https://projectlombok.org?utm_source=areguig.github.io "project lombok"). It helps me in so many ways when i am writing my code that it became frustrating to me when i can't find it on the classpath of the project i am working on. 
+
+
+#### @Log (@CommonLog/@Slf4j/@Log4j/...)
+
+This simple annotation replaces the long line that i keep forgetting : 
+```java 
+private static final org.apache.commons.logging.Log log =
+org.apache.commons.logging.LogFactory.getLog(LogExample.class);
+```
+
+[documentation](https://projectlombok.org/features/log?utm_source=areguig.github.io "@Log")
+
+#### Accessors, Equals and HashCode (@Getter/@Setter) 
+
+Lombok can also generate getters, setters, equals and hascode methods :
+
+```java
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter @EqualsAndHashCode
+public class Person {
+    private String firstName;
+    private String lastName;
+    private int age;
+    private String email;
+}
+```
+Lombok can be configured to generate chainable (returning `this`) and fluent accessors so we can write : 
+
+``` Java
+Person homer = new Person()
+	            	.firstName("Homer")
+                	.lastName("Simpson")
+                	.age(39)
+                	.email("hsimpson@burns-corp.com");
+```
+[documentation](https://projectlombok.org/features/all?utm_source=areguig.github.io "doc")
+
+#### @Builder
+
+If instead of/in addition to the fluent and chainable accessors a `Builder` is need (useful when all the properties are `final`... _Immutability_ ) Lombok provides a `@Builder` annotation that generates a builder so we can use : 
+
+```java
+Person homer = Person.builder()
+                .firstName("Homer")
+                .lastName("Simpson")
+                .age(39)
+                .email("hsimpson@burns-corp.com")
+                .build();                
+```
+
+[documentation](https://projectlombok.org/features/Builder?utm_source=areguig.github.io "@Builder")
+
+#### val/var 
+
+I don't use these features everywhere but sometimes they can be useful. 
+`val` avoids writing the type of a variable by inferring it. 
+It also declares the variable as `final`
+
+```java
+import lombok.val;
+//...
+val homer = new Person().firstName("Homer").lastName("Simpson");
+``` 
+`var` works exactly like `val`, except the local variable is not declared as `final`.
+
+documentation : [val](https://projectlombok.org/features/val?utm_source=areguig.github.io "val") [var](https://projectlombok.org/features/var "var")
+
+
+#### More
+
+Lombok offers a lot more feature that may be useful: 
+
+`@Data` : a shortcut for `@ToString`, `@EqualsAndHashCode`, `@Getter` and `@Setter`
+
+Constructors : `@NoArgsConstructor`, `@RequiredArgsConstructor` and `@AllArgsConstructor`
+
+Lombok can be configured using a simple config file [lombok.config](https://projectlombok.org/features/configuration?utm_source=areguig.github.io "config")
+
+https://projectlombok.org/features/configuration
+
+Checkout all the features on the [website](https://projectlombok.org/features/all?utm_source=areguig.github.io "all-features")
