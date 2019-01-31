@@ -28,8 +28,7 @@ SELECT now() - query_start as "runtime",client_addr, waiting, state, query
 _running_
 
 ```sql
-select relname,last_vacuum, last_autovacuum, last_analyze, last_autoanalyze 
- from pg_stat_user_tables;
+SELECT pg_cancel_backend(procpid);
  ```
  
 _idle_
