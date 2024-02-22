@@ -18,9 +18,12 @@ html {
 }
 
 body {
-	background: rgba(221, 221, 221, 0.61);
+  background: rgba(221, 221, 221, 0.61);
   font: 16px/1.4 $helvetica;
   color: $darkGray;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
 }
 
 .container {
@@ -28,6 +31,7 @@ body {
   max-width: 760px;
   padding: 0 10px;
   width: 100%;
+  flex-grow: 1;
 }
 
 h1, h2, h3, h4, h5, h6 {
