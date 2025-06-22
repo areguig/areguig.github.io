@@ -6,7 +6,7 @@ import { Briefcase, GraduationCap, MapPin, Calendar } from 'lucide-react'
 
 export const metadata = {
   title: 'About - Akli Reguig',
-  description: 'Learn more about Akli Reguig - Senior Software Engineer and DevOps enthusiast based in Paris, France.',
+  description: 'Learn more about Akli Reguig - Senior Freelance Software Engineer and DevOps consultant based in Paris, France.',
 }
 
 export default function AboutPage() {
@@ -18,11 +18,18 @@ export default function AboutPage() {
 
   const experience = [
     {
+      title: 'Senior Freelance Software Engineer',
+      company: 'Independent Consultant',
+      location: 'Paris, France',
+      period: '2023 - Present',
+      description: 'Providing software engineering consulting services to help businesses modernize their applications, implement DevOps practices, and optimize development workflows. Focus on Java/Spring Boot, microservices architecture, and CI/CD pipeline implementation.'
+    },
+    {
       title: 'Senior Software Engineer',
       company: 'Renault Digital',
       location: 'Chennevières, Île-de-France, France',
-      period: 'Current',
-      description: 'Working on digital transformation initiatives and software engineering projects.'
+      period: '2020 - 2023',
+      description: 'Led digital transformation initiatives, designed and implemented scalable software solutions, and mentored junior developers in modern development practices.'
     }
   ]
 
@@ -31,7 +38,7 @@ export default function AboutPage() {
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight mb-4">About Me</h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Senior Software Engineer passionate about DevOps, clean code, and sharing knowledge
+          Senior Freelance Software Engineer & Consultant passionate about DevOps, clean code, and sharing knowledge
         </p>
       </div>
 
@@ -46,13 +53,14 @@ export default function AboutPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-muted-foreground">
-              I&apos;m a Senior Software Engineer with over a decade of experience in enterprise software development. 
-              Currently working at Renault Digital, I specialize in Java/Spring Boot applications, DevOps practices, 
-              and database technologies.
+              I&apos;m a Senior Freelance Software Engineer with over a decade of experience in enterprise software development. 
+              I help businesses modernize their applications, implement DevOps practices, and build scalable solutions 
+              using Java/Spring Boot, microservices architecture, and cloud technologies.
             </p>
             <p className="text-muted-foreground">
-              I&apos;m passionate about writing clean, testable code and implementing robust CI/CD pipelines. 
-              I enjoy sharing knowledge through technical blog posts and contributing to open-source projects.
+              As an independent consultant, I specialize in code quality, automated testing, CI/CD pipeline implementation, 
+              and team mentoring. I&apos;m passionate about sharing knowledge through technical blog posts and contributing 
+              to open-source projects.
             </p>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <MapPin className="h-4 w-4" />
@@ -159,13 +167,18 @@ export default function AboutPage() {
 
       {/* CTA */}
       <div className="text-center">
-        <h2 className="text-2xl font-bold mb-4">Let&apos;s Connect</h2>
+        <h2 className="text-2xl font-bold mb-4">Ready to Work Together?</h2>
         <p className="text-muted-foreground mb-6">
-          I&apos;m always interested in discussing software architecture, DevOps practices, 
-          or potential collaboration opportunities.
+          I&apos;m available for freelance projects and consulting engagements. Let&apos;s discuss how I can help 
+          your team build better software, implement DevOps practices, or modernize your applications.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild>
+            <Link href="mailto:contact@areguig.com">
+              Get In Touch
+            </Link>
+          </Button>
+          <Button variant="outline" asChild>
             <Link href="https://linkedin.com/in/areguig" target="_blank" rel="noopener noreferrer">
               Connect on LinkedIn
             </Link>

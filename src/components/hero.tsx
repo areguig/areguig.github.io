@@ -12,8 +12,8 @@ export function Hero() {
             <span className="text-primary">Akli Reguig</span>
           </h1>
           <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Senior Software Engineer & DevOps Enthusiast based in Paris, France. 
-            I build scalable applications and share insights about modern development practices.
+            Senior Software Engineer & Freelance Consultant based in Paris, France. 
+            I help businesses build scalable applications and optimize their development processes.
           </p>
         </div>
 
@@ -30,6 +30,9 @@ export function Hero() {
             <Database className="h-5 w-5 text-primary" />
             <span className="text-sm font-medium">PostgreSQL</span>
           </div>
+          <div className="flex items-center space-x-2 bg-muted/50 rounded-lg px-4 py-2">
+            <span className="text-sm font-medium">💼 Available for Freelance</span>
+          </div>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -43,11 +46,16 @@ export function Hero() {
               About Me
             </Link>
           </Button>
+          <Button variant="secondary" size="lg" asChild>
+            <Link href="mailto:contact@areguig.com">
+              Hire Me
+            </Link>
+          </Button>
         </div>
 
         <div className="mt-16 text-sm text-muted-foreground">
-          <p>Currently working at <strong>Renault Digital</strong></p>
-          <p>Previously contributed to various open-source projects</p>
+          <p><strong>Senior Freelance Software Engineer</strong> • Available for consulting</p>
+          <p>10+ years experience • Open source contributor • Arctic Code Vault</p>
         </div>
       </div>
     </section>
