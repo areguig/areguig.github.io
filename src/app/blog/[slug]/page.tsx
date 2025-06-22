@@ -71,7 +71,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         </p>
       </div>
       
-      <article className="prose prose-gray dark:prose-invert max-w-none">
+      <article className="prose prose-slate dark:prose-invert max-w-none prose-headings:text-foreground prose-p:text-foreground prose-li:text-foreground prose-strong:text-foreground">
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </article>
     </div>
