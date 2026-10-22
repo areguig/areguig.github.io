@@ -3,6 +3,7 @@ import { Inter_Tight, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { Nav } from '@/components/nav'
 import { Footer } from '@/components/footer'
+import { links } from '@/content/site'
 
 const sans = Inter_Tight({ subsets: ['latin'], variable: '--font-sans' })
 const serif = Instrument_Serif({ subsets: ['latin'], weight: '400', style: ['normal', 'italic'], variable: '--font-serif' })
@@ -15,7 +16,8 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://areguig.github.io'),
   title: 'Akli Reguig · Software engineer, backends & AI agents',
   description,
-  authors: [{ name: 'Akli Reguig' }],
+  alternates: { canonical: '/' },
+  authors: [{ name: 'Akli Reguig', url: 'https://areguig.github.io' }],
   keywords: ['Akli Reguig', 'freelance', 'Java', 'Spring Boot', 'Spring AI', 'MCP', 'AI agents', 'Kubernetes', 'Paris'],
   openGraph: {
     title: 'Akli Reguig · Software engineer, backends & AI agents',
@@ -37,9 +39,30 @@ export const viewport: Viewport = {
   themeColor: '#08080a',
 }
 
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Akli Reguig',
+  url: 'https://areguig.github.io',
+  image: 'https://areguig.github.io/og.png',
+  jobTitle: 'Freelance software engineer',
+  description,
+  address: { '@type': 'PostalAddress', addressLocality: 'Paris', addressCountry: 'FR' },
+  alumniOf: { '@type': 'CollegeOrUniversity', name: 'Université Pierre et Marie Curie (Paris VI)' },
+  knowsAbout: ['Java', 'Spring Boot', 'Spring AI', 'AI agents', 'Model Context Protocol', 'DevOps', 'CI/CD', 'Kubernetes', 'Software architecture', 'Test automation'],
+  sameAs: [links.linkedin, links.github],
+}
+
+// Content stays visible for crawlers and no-JS visitors; only hide for the reveal animation once JS runs
+const jsFlag = "document.documentElement.classList.add('js')"
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${sans.variable} ${serif.variable} ${mono.variable}`}>
+    <html lang="en" className={`${sans.variable} ${serif.variable} ${mono.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: jsFlag }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(person) }} />
+      </head>
       <body className="overflow-x-clip font-sans">
         <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
           <div className="backdrop-grid absolute inset-0" />

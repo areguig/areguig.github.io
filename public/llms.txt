@@ -1,0 +1,32 @@
+# Akli Reguig
+
+> Freelance software engineer based in Paris. Over ten years of Java, Spring and DevOps. Builds AI agents that do real work for real teams: MCP servers, skills and plugins for AI harnesses, shared memory for coding agents.
+
+Contact: LinkedIn only, https://www.linkedin.com/in/areguig/
+
+## What he does
+
+- Agentic engineering: MCP servers, skills, hooks and shared memory for AI harnesses (Claude Code, OpenCode, OMP, Pi, Copilot)
+- Backends: Java and Spring, clean APIs, event-driven services, test-first
+- DevOps: continuous integration and delivery, containers, Kubernetes, cloud
+- Teams: coding dojos, pair and mob programming, AI workflows that fit how a team already works
+
+## Experience
+
+- Freelance since 2017; with Renault's digital teams since 2019
+- Connected services for a car-owner mobile app, vehicle engineering data APIs, an EV charging platform, shared Spring Boot building blocks, test automation
+- Since 2025: AI agents in production, assistants for non-developer teams, MCP servers
+- Computer science at Université Pierre et Marie Curie (Paris VI), 2007–2012
+
+## Projects
+
+- [petit-poucet](https://github.com/areguig/petit-poucet): one memory for every coding agent, Markdown in git, served over MCP by a Rust binary
+- [Refinery](https://refinery.craftera.fr): planning poker for backlog refinement
+- [scrawl](https://scrawl.akli-reguig.workers.dev/): a scratchpad where AI agents publish an HTML page and get a link
+- [Karate Studio](https://kaas.netlify.app/): write and run Karate API tests in the browser
+
+## Links
+
+- Site: https://areguig.github.io
+- GitHub: https://github.com/areguig
+- LinkedIn: https://www.linkedin.com/in/areguig/
